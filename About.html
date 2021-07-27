@@ -6,29 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="./assets/css/about.css">
     <title>Document</title>
 </head>
 <body>
-    <header class="header">
-        <h1>Test</h1>
-        <ul>
-            <li><a href="#">Saved Places</a></li>
-            <li><a href="#">Make it Yourself</a></li>
-            <li><a href="#">About</a></li>
-            </ul>
-    </header>
+    <nav class="top-bar topbar-responsive">
+            <div class="top-bar-title">
+              <a class="topbar-responsive-logo"><strong>Warm Beer and Cold Women</strong>
+            </div>
+            <div id="topbar-responsive" class="topbar-responsive-links">
+              <div class="top-bar-right">
+                <ul class="menu simple vertical medium-horizontal">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Works</a></li>
+                  <li><a href="#">News</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li>
+                    <!-- <button type="button" class="button hollow topbar-responsive-button">Categories</button> -->
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    <!-- <aside>
+        <button>Search Here</button>
+            <p>search box</p>
+            <form class="pure-form">
+                <input type="text" class="pure-input-rounded" />
+                <button type="submit" class="pure-button">Search</button>
+            </form>
+        </aside>
     <section>
-        <p>About Page</p>
+        <p>results box header</p>
     </section>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWFwb25vIiwiYSI6ImNrcmkzeWg5MTRwOXoydnBkcWQyYXAweWMifQ.4vX11iAWvCYoQntike98uw';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+    });
+    </script> 
+   <script src ="script.js"></script> -->
+
+    <article class="aboutText">
+        <h1>About Us</h1>
+        <p>
+            With BEER were all about the cold beers and the cold women. It's hard to choose what bars you really want to choose and go to since everyone wants to have a good time with friends and family. We've made easier for you to look up where to go and even save them as your favorites. We're all about versitility and with BEER it's such an easy task. So have fun. enjoy a cold one and have a good time!
+        </p>
+        <img src="https://assets.visitmilwaukee.org/visitmke/media/global/Partner%20Images/Gallery%20Size/VM-ThirdSpaceBrewing-Beers.jpg?ext=.jpg&mode=crop&width=1920&height=1080&scale=both" alt="beers_img">
+    </article>
+    
     <footer>
-        <p>copyright and ohter info</p>
+        <p>copyright and other info</p>
         <ul>
-            <li><a href="#">Saved Places</a></li>
-            <li><a href="#">Make it Yourself</a></li>
-            <li><a href="#">About</a></li>
+            <a href="#">Saved Places</a>
+            <a href="#">Make it Yourself</a>
+            <a href="#">About</a>
             </ul>
     </footer>
-    <div id='map' style='width: 400px; height: 300px;'></div>
     <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibWFwb25vIiwiYSI6ImNrcmkzeWg5MTRwOXoydnBkcWQyYXAweWMifQ.4vX11iAWvCYoQntike98uw';
     var map = new mapboxgl.Map({
