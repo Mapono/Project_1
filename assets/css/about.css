@@ -138,4 +138,23 @@ ul.menu.simple.vertical.medium-horizontal {
     }
   }
   
-  
+  p, h1 {
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  footer {
+    display: block;
+    text-align: center;
+    font-size: small;
+    margin-top: 1rem;
+    padding: 3px;
+    background-color: #7997ac;
+    color: black;
+  }
