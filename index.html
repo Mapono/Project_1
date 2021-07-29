@@ -13,7 +13,7 @@
 <body>
         <nav class="top-bar topbar-responsive">
             <div class="top-bar-title">
-              <a class="topbar-responsive-logo"><strong>Warm Beer and Cold Women</strong>
+              <a class="topbar-responsive-logo"><strong>🍺 Warm Beer and Cold Women 🍺</strong>
             </div>
             <div id="topbar-responsive" class="topbar-responsive-links">
               <div class="top-bar-right">
@@ -24,24 +24,28 @@
                   <li><a href="#">Works</a></li>
                   <li><a href="#">News</a></li>
                   <li><a href="#">Contact</a></li>
-                  <li>
-                    <button type="button" class="button hollow topbar-responsive-button">Categories</button>
-                  </li>
                 </ul>
               </div>
             </div>
           </nav>
+    <main>      
     <aside>
-        <button>Search Here</button>
             <p>search box</p>
             <form class="pure-form">
-                <input type="text" class="pure-input-rounded" />
-                <button type="submit" class="pure-button">Search</button>
+                <input type="text" class="pure-input-rounded" id="city-name">
+                <button id="fetch-button" type="button" class="pure-button">Search</button>
             </form>
         </aside>
     <section>
         <p>results box header</p>
+        <table class="card-body table mx-auto my-4">
+          <th>
+            <p class="my-4">Results</p>
+          </th>
+          <tbody id="repo-table" class="mx-auto text-center"></tbody>
+        </table>
     </section>
+  </main>  
     <footer>
         <p>copyright and ohter info</p>
         <ul>
