@@ -1,6 +1,7 @@
 var tableBody = document.getElementById('repo-table');
 var fetchButton = document.getElementById('fetch-button')
 var cityNameEl = document.getElementById("city-name")
+var breweryAddressEl = document.getElementById("brewery-address")
 
 function getCityName(event) {
   event.preventDefault();
@@ -18,26 +19,41 @@ function getApi(city) {
         return response.json();
     })
     .then(function(data){
-        console.log(data)
-        for (var i = 0; i < data.length; i++) {
-            var createTableRow = document.createElement("tr");
-            var tableData = document.createElement("td");
-            var link = document.createElement("p");
-            link.textContent = data[i].name;
-            tableData.appendChild(link);
-            createTableRow.appendChild(tableData);
-            tableBody.appendChild(createTableRow);
-        }
-    }).catch(function(err){
-      console.log(err)
-    })
+      console.log(data)
+      for (var i = 0; i < data.length; i++) {
+          var createTableRow = document.createElement("tr");
+          var tableData = document.createElement("td");
+          var text = document.createElement("h4");
+          text.textContent = data[i].name;
+          tableData.appendChild(text);
+          createTableRow.appendChild(tableData);
+          tableBody.appendChild(createTableRow);
+          var createTableRow = document.createElement("tr");
+          var tableData = document.createElement("td");
+          var text = document.createElement("p");
+          text.textContent = data[i].street;
+          tableData.appendChild(text);
+          createTableRow.appendChild(tableData);
+          tableBody.appendChild(createTableRow);
+          var createTableRow = document.createElement("tr");
+          var tableData = document.createElement("td");
+          var text = document.createElement("p");
+          text.textContent = data[i].city;
+          tableData.appendChild(text);
+          createTableRow.appendChild(tableData);
+          tableBody.appendChild(createTableRow);
+          var createTableRow = document.createElement("tr");
+          var tableData = document.createElement("td");
+          var text = document.createElement("p");
+          text.textContent = data[i].website_url;
+          tableData.appendChild(text);
+          createTableRow.appendChild(tableData);
+          tableBody.appendChild(createTableRow);
+      }
+  })
 }
+
 fetchButton.addEventListener("click", getCityName);
-fetchButton.addEventListener("keydown", function(event){
-event.preventDefault();
-if (event.key === "Enter") {
-     getCityName()
-   } else {
-     return event
-   }
- })
+
+
+
