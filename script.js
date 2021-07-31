@@ -49,11 +49,35 @@ function getApi(city) {
           tableData.appendChild(text);
           createTableRow.appendChild(tableData);
           tableBody.appendChild(createTableRow);
+          // add button
+          var addButton = document.createElement("button");
+          addButton.innerHTML = '<i class="fa fa-plus-square" aria-hidden="true"></i>';
+          addButton.classList.add("add-button");
+          createTableRow.appendChild(addButton);
       }
   })
 }
 
 fetchButton.addEventListener("click", getCityName);
 
+var addButton = document.querySelectorAll(".add-button");
 
+// create saveBrewery
+function saveBrewery(){
+  // check if have saved key in local storage
+  var saved;
+  if(localStorage.getItem("saved")=== null){
+    saved = [];
+  }else {
+    saved = JSON.parse(localStorage.getItem("saved"));
+  }
+  saved.push();
+  localStorage.setItem("saved", JSON.stringify(saved));
+}
+saveBrewery();
+
+// save brewery when click add button FOR EVERY BUTTON
+for (var i = 0; i < addButton.length; i++){
+  addButton[i].addEventListener("click", saveBrewery);
+  };
 
