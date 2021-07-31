@@ -13,37 +13,45 @@
 <body>
         <nav class="top-bar topbar-responsive">
             <div class="top-bar-title">
-              <a class="topbar-responsive-logo"><strong>Warm Beer and Cold Women</strong>
+              <a class="topbar-responsive-logo"><strong>🍺 Warm Beer and Cold Women 🍺</strong>
             </div>
             <div id="topbar-responsive" class="topbar-responsive-links">
               <div class="top-bar-right">
                 <ul class="menu simple vertical medium-horizontal">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Works</a></li>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="About.html">About</a></li>
+                  <li><a href="Bookmarks.html">Bookmarks</a></li>
+                  <li><a href="Recipes.html">Recipes</a></li>
                   <li><a href="#">News</a></li>
                   <li><a href="#">Contact</a></li>
-                  <li>
-                    <button type="button" class="button hollow topbar-responsive-button">Categories</button>
-                  </li>
                 </ul>
               </div>
             </div>
           </nav>
+    <main>      
     <aside>
-        <button>Search Here</button>
-            <p>search box</p>
+            <h2>Find a Brewery</h2>
             <form class="pure-form">
-                <input type="text" class="pure-input-rounded" />
-                <button type="submit" class="pure-button">Search</button>
+                <input type="text" class="pure-input-rounded" id="city-name">
+                <button id="fetch-button" type="button" class="pure-button">Search</button>
             </form>
+            <div id="container">
+
+            </div>
         </aside>
     <section>
-        <p>results box header</p>
+      <h2>Select a Brewry</h2>
+        <table class="card-body table mx-auto my-4">
+          <th>
+            <p class="my-4">Results</p>
+          </th>
+          <tbody id="repo-table" class="mx-auto text-center"></tbody>
+        </table>
+        
     </section>
+  </main>  
     <footer>
-        <p>copyright and ohter info</p>
+        <p>copyright and other info</p>
         <ul>
             <li><a href="#">Saved Places</a></li>
             <li><a href="#">Make it Yourself</a></li>
@@ -58,6 +66,7 @@
     style: 'mapbox://styles/mapbox/streets-v11'
     });
     </script> 
+    <script src="https://use.fontawesome.com/b3b887fd45.js"></script>
    <script src ="script.js"></script>
 </body>
 </html>
