@@ -63,21 +63,11 @@ fetchButton.addEventListener("click", getCityName);
 var addButton = document.querySelectorAll(".add-button");
 
 // create saveBrewery
-function saveBrewery(){
-  // check if have saved key in local storage
-  var saved;
-  if(localStorage.getItem("saved")=== null){
-    saved = [];
-  }else {
-    saved = JSON.parse(localStorage.getItem("saved"));
-  }
-  saved.push();
-  localStorage.setItem("saved", JSON.stringify(saved));
-}
+function saveBrewery(event){
+  event.preventDefault();
+  console.log("clicked");
+};
 saveBrewery();
-
 // save brewery when click add button FOR EVERY BUTTON
-for (var i = 0; i < addButton.length; i++){
-  addButton[i].addEventListener("click", saveBrewery);
-  };
-
+var addButtons = document.querySelectorAll("add-button");
+addButtons = document.addEventListener("click", saveBrewery);
