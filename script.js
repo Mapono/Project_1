@@ -46,12 +46,21 @@ function getApi(city) {
           addButton.classList.add("add-button");
           createBreweryCardEl.appendChild(addButton);
           breweryCardContainer.appendChild(createBreweryCardEl)
+
         
         // add button-p
         var addButton = document.createElement("button");
         addButton.innerHTML = '<i class="fa fa-plus-square" aria-hidden="true"></i>';
         addButton.setAttribute("class", "addbutton");
         breweryCardContainer.appendChild(addButton);
+
+        
+        // add button
+        var addButton = document.createElement("button");
+        addButton.innerHTML = '<i class="fa fa-plus-square" aria-hidden="true"></i>';
+        addButton.setAttribute("class", "addbutton");
+        createTableRow.appendChild(addButton);
+
 
         let save = data[i];
         // console.log(save);
