@@ -41,12 +41,7 @@ function getApi(city) {
           text.textContent = data[i].city;
           createBreweryCardEl.appendChild(text);
           createBreweryCardEl.appendChild(breweryData);
-          // add button
-          var addButton = document.createElement("button");
-          addButton.innerHTML = '<i class="fa fa-plus-square" aria-hidden="true"></i>';
-          addButton.classList.add("add-button");
-          createBreweryCardEl.appendChild(addButton);
-          breweryCardContainer.appendChild(createBreweryCardEl)
+    
 
         var createTableRow = document.createElement("tr");
         var tableData = document.createElement("td");
