@@ -30,7 +30,6 @@ function getApi(city) {
           text.textContent = data[i].name;
           createBreweryCardEl.appendChild(text);
           createBreweryCardEl.appendChild(breweryData);
-          text.textContent = data[i].city;
           var breweryData = document.createElement("p");
           var text = document.createElement("p");
           text.textContent = data[i].street;
@@ -43,40 +42,20 @@ function getApi(city) {
           createBreweryCardEl.appendChild(breweryData);
     
 
-        var createTableRow = document.createElement("tr");
-        var tableData = document.createElement("td");
-        var text = document.createElement("h4");
-        text.textContent = data[i].name;
-        tableData.appendChild(text);
-        createTableRow.appendChild(tableData);
-        tableBody.appendChild(createTableRow);
-        var createTableRow = document.createElement("tr");
-        var tableData = document.createElement("td");
-        var text = document.createElement("p");
-        text.textContent = data[i].street;
-        tableData.appendChild(text);
-        createTableRow.appendChild(tableData);
-        tableBody.appendChild(createTableRow);
-        var createTableRow = document.createElement("tr");
-        var tableData = document.createElement("td");
-        var text = document.createElement("p");
-        text.textContent = data[i].city;
-        tableData.appendChild(text);
-        createTableRow.appendChild(tableData);
-        tableBody.appendChild(createTableRow);
-        var createTableRow = document.createElement("tr");
-        var tableData = document.createElement("td");
-        var text = document.createElement("p");
-        text.textContent = data[i].website_url;
-        tableData.appendChild(text);
-        createTableRow.appendChild(tableData);
-        tableBody.appendChild(createTableRow);
+        
+        // add button-p
+        var addButton = document.createElement("button");
+        addButton.innerHTML = '<i class="fa fa-plus-square" aria-hidden="true"></i>';
+        addButton.setAttribute("class", "addbutton");
+        breweryCardContainer.appendChild(addButton);
+
         
         // add button
         var addButton = document.createElement("button");
         addButton.innerHTML = '<i class="fa fa-plus-square" aria-hidden="true"></i>';
         addButton.setAttribute("class", "addbutton");
         createTableRow.appendChild(addButton);
+
 
         let save = data[i];
         // console.log(save);
