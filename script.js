@@ -62,6 +62,13 @@ function getApi(city) {
           var saved = JSON.parse(localStorage.getItem("savedBrews")) || [];
           saved.push(save);
           localStorage.setItem("savedBrews", JSON.stringify(saved));
+          var beers = document.getElementById("beer");
+    
+          var brewNames = [];
+          for (var i = 0; i<saved.length; i++){
+            brewNames.push(saved[i].name)
+          }
+          beers.textContent = brewNames.join(", ");
         };
         addButton.addEventListener("click", function () { saveBrewery(save) });
       }
