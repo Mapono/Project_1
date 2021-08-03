@@ -13,15 +13,16 @@ function getCityName(event) {
 }
 
 function getApi(city) {
- 
-    var requestUrl = "https://api.openbrewerydb.org/breweries?by_city="+ city;
-    fetch(requestUrl)
+
+  var requestUrl = "https://api.openbrewerydb.org/breweries?by_city=" + city;
+  fetch(requestUrl)
     .then(function (response) {
-        return response.json();
+      return response.json();
     })
-    .then(function(data){
+    .then(function (data) {
       console.log(data)
       for (var i = 0; i < data.length; i++) {
+
           var createBreweryCardEl = document.createElement("div");
           createBreweryCardEl.classList.add("brewery-card");
           var breweryData = document.createElement("p");
@@ -46,13 +47,65 @@ function getApi(city) {
           addButton.classList.add("add-button");
           createBreweryCardEl.appendChild(addButton);
           breweryCardContainer.appendChild(createBreweryCardEl)
+
+        var createTableRow = document.createElement("tr");
+        var tableData = document.createElement("td");
+        var text = document.createElement("h4");
+        text.textContent = data[i].name;
+        tableData.appendChild(text);
+        createTableRow.appendChild(tableData);
+        tableBody.appendChild(createTableRow);
+        var createTableRow = document.createElement("tr");
+        var tableData = document.createElement("td");
+        var text = document.createElement("p");
+        text.textContent = data[i].street;
+        tableData.appendChild(text);
+        createTableRow.appendChild(tableData);
+        tableBody.appendChild(createTableRow);
+        var createTableRow = document.createElement("tr");
+        var tableData = document.createElement("td");
+        var text = document.createElement("p");
+        text.textContent = data[i].city;
+        tableData.appendChild(text);
+        createTableRow.appendChild(tableData);
+        tableBody.appendChild(createTableRow);
+        var createTableRow = document.createElement("tr");
+        var tableData = document.createElement("td");
+        var text = document.createElement("p");
+        text.textContent = data[i].website_url;
+        tableData.appendChild(text);
+        createTableRow.appendChild(tableData);
+        tableBody.appendChild(createTableRow);
+        
+        // add button
+        var addButton = document.createElement("button");
+        addButton.innerHTML = '<i class="fa fa-plus-square" aria-hidden="true"></i>';
+        addButton.setAttribute("class", "addbutton");
+        createTableRow.appendChild(addButton);
+
+        let save = data[i];
+        // console.log(save);
+        function saveBrewery() {
+          var saved = JSON.parse(localStorage.getItem("savedBrews")) || [];
+          saved.push(save);
+          localStorage.setItem("savedBrews", JSON.stringify(saved));
+          var beers = document.getElementById("beer");
+    
+          var brewNames = [];
+          for (var i = 0; i<saved.length; i++){
+            brewNames.push(saved[i].name)
+          }
+          beers.textContent = brewNames.join(", ");
+        };
+        addButton.addEventListener("click", function () { saveBrewery(save) });
+
       }
-  })
-}
+    })
+};
 
 fetchButton.addEventListener("click", getCityName);
 
-var addButton = document.querySelectorAll(".add-button");
+
 
 // create saveBrewery
 function saveBrewery(event){
@@ -62,3 +115,4 @@ function saveBrewery(event){
 // save brewery when click add button FOR EVERY BUTTON
 var addButtons = document.querySelectorAll("add-button");
 addButtons = document.addEventListener("click", saveBrewery);
+
