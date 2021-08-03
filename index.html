@@ -64,48 +64,48 @@ var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/light-v10',
   center: [-96, 37.8],
-  zoom: 3
+  zoom: 5
 });
 
 // code from the next step will go here!
 
-var geojson = {
-  type: 'FeatureCollection',
-  features: [{
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [-77.032, 38.913]
-    },
-    properties: {
-      title: 'Mapbox',
-      description: 'Washington, D.C.'
-    }
-  },
-  {
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [-122.414, 37.776]
-    },
-    properties: {
-      title: 'Mapbox',
-      description: 'San Francisco, California'
-    }
-  }]
-};
+// var geojson = {
+//   type: 'FeatureCollection',
+//   features: [{
+//     type: 'Feature',
+//     geometry: {
+//       type: 'Point',
+//       coordinates: [-77.032, 38.913]
+//     },
+//     properties: {
+//       title: 'Mapbox',
+//       description: 'Washington, D.C.'
+//     }
+//   },
+//   {
+//     type: 'Feature',
+//     geometry: {
+//       type: 'Point',
+//       coordinates: [-122.414, 37.776]
+//     },
+//     properties: {
+//       title: 'Mapbox',
+//       description: 'San Francisco, California'
+//     }
+//   }]
+// };
 // add markers to map
-geojson.features.forEach(function(marker) {
+//geojson.features.forEach(function(marker) {
 
 // create a HTML element for each feature
-var el = document.createElement('div');
-el.className = 'marker';
+// var el = document.createElement('div');
+// el.className = 'marker';
 
-// make a marker for each feature and add to the map
-new mapboxgl.Marker(el)
-  .setLngLat(marker.geometry.coordinates)
-  .addTo(map);
-});
+// // make a marker for each feature and add to the map
+// new mapboxgl.Marker(el)
+//   .setLngLat(marker.geometry.coordinates)
+//   .addTo(map);
+//});
     </script> 
     <script src="https://use.fontawesome.com/b3b887fd45.js"></script>
    <script src ="script.js"></script>

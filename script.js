@@ -1,3 +1,4 @@
+
 var tableBody = document.getElementById('repo-table');
 var fetchButton = document.getElementById('fetch-button')
 var cityNameEl = document.getElementById("city-name")
@@ -21,6 +22,10 @@ function getApi(city) {
     })
     .then(function (data) {
       console.log(data)
+      var filterData = data.filter(function(brewery){
+        return brewery.latitude && brewery.longitude
+      })
+      placePins(filterData)
       breweryCardContainer.textContent = ""
       for (var i = 0; i < data.length; i++) {
 
@@ -106,4 +111,14 @@ function saveBrewery(event){
 var addButtons = document.querySelectorAll("add-button");
 addButtons = document.addEventListener("click", saveBrewery);
 
+function placePins(data){
+  for (let i = 0; i < data.length; i++) {
+    const element = data[i];
+    var el = document.createElement('div');
+    el.className = 'marker';
+    new mapboxgl.Marker(el)
+  .setLngLat([element.longitude,element.latitude])
+  .addTo(map);
+  }
+}
 
