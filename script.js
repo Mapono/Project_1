@@ -2,7 +2,7 @@ var tableBody = document.getElementById('repo-table');
 var fetchButton = document.getElementById('fetch-button')
 var cityNameEl = document.getElementById("city-name")
 var breweryAddressEl = document.getElementById("brewery-address")
-var breweryCardContainer = document.querySelector(".breweries-container")
+var breweryCardContainer = document.querySelector(".brewery-deck")
 
 function getCityName(event) {
   event.preventDefault();
@@ -21,67 +21,78 @@ function getApi(city) {
     })
     .then(function (data) {
       console.log(data)
+      breweryCardContainer.textContent = ""
       for (var i = 0; i < data.length; i++) {
 
-          var createBreweryCardEl = document.createElement("div");
-          createBreweryCardEl.classList.add("brewery-card");
-          var breweryData = document.createElement("p");
-          var text = document.createElement("h4");
-          text.textContent = data[i].name;
-          createBreweryCardEl.appendChild(text);
-          createBreweryCardEl.appendChild(breweryData);
-          var breweryData = document.createElement("p");
-          var text = document.createElement("p");
-          text.textContent = data[i].street;
-          createBreweryCardEl.appendChild(text);
-          createBreweryCardEl.appendChild(breweryData);
-          var breweryData = document.createElement("p");
-          var text = document.createElement("p");
-          text.textContent = data[i].city;
-          createBreweryCardEl.appendChild(text);
-          createBreweryCardEl.appendChild(breweryData);
-          // add button
-          var addButton = document.createElement("button");
-          addButton.innerHTML = '<i class="fa fa-plus-square" aria-hidden="true"></i>';
-          addButton.classList.add("add-button");
-          createBreweryCardEl.appendChild(addButton);
-          breweryCardContainer.appendChild(createBreweryCardEl)
-
-        
-        // add button-p
-        var addButton = document.createElement("button");
-        addButton.innerHTML = '<i class="fa fa-plus-square" aria-hidden="true"></i>';
-        addButton.setAttribute("class", "addbutton");
-        breweryCardContainer.appendChild(addButton);
-
-        
+        var createBreweryCardEl = document.createElement("div");
+        createBreweryCardEl.classList.add("brewery-card");
+        var breweryData = document.createElement("p");
+        var text = document.createElement("h4");
+        text.textContent = data[i].name;
+        createBreweryCardEl.appendChild(text);
+        createBreweryCardEl.appendChild(breweryData);
+        var breweryData = document.createElement("p");
+        var text = document.createElement("p");
+        text.textContent = data[i].street;
+        createBreweryCardEl.appendChild(text);
+        createBreweryCardEl.appendChild(breweryData);
+        var breweryData = document.createElement("p");
+        var text = document.createElement("p");
+        text.textContent = data[i].city;
+        createBreweryCardEl.appendChild(text);
+        createBreweryCardEl.appendChild(breweryData);
+        var breweryData = document.createElement("p");
+        var text = document.createElement("p");
+        text.textContent = data[i].website_url;
+        createBreweryCardEl.appendChild(text);
+        createBreweryCardEl.appendChild(breweryData);
         // add button
         var addButton = document.createElement("button");
         addButton.innerHTML = '<i class="fa fa-plus-square" aria-hidden="true"></i>';
-        addButton.setAttribute("class", "addbutton");
-        createTableRow.appendChild(addButton);
+        addButton.classList.add("add-button");
+        createBreweryCardEl.appendChild(addButton);
+        breweryCardContainer.appendChild(createBreweryCardEl)
+
+
+
+
 
 
         let save = data[i];
         // console.log(save);
         function saveBrewery() {
           var saved = JSON.parse(localStorage.getItem("savedBrews")) || [];
-          saved.push(save);
-          localStorage.setItem("savedBrews", JSON.stringify(saved));
-          var beers = document.getElementById("beer");
-    
-          var brewNames = [];
+
+          var haveBrewery = false 
           for (var i = 0; i<saved.length; i++){
-            brewNames.push(saved[i].name)
+            if (saved[i].name === save.name) {
+              haveBrewery = true
+            }
           }
-          beers.textContent = brewNames.join(", ");
+          if (!haveBrewery) {
+            saved.push(save);
+            localStorage.setItem("savedBrews", JSON.stringify(saved));
+          }
+          loadLocalStorage ()
+
         };
+        
         addButton.addEventListener("click", function () { saveBrewery(save) });
 
       }
     })
 };
+function loadLocalStorage () {
+  var saved = JSON.parse(localStorage.getItem("savedBrews")) || [];
+  var beers = document.getElementById("beer");
 
+  var brewNames = [];
+  for (var i = 0; i<saved.length; i++){
+    brewNames.push(saved[i].name)
+  }
+  beers.textContent = brewNames.join(", ");
+}
+loadLocalStorage()
 fetchButton.addEventListener("click", getCityName);
 
 

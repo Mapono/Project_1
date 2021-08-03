@@ -40,13 +40,14 @@
     <section>
       <div class="breweries-container">
       <h2>Select a Brewry</h2>
-
-          <div class="brewery-card"></div>
+      <div class="brewery-deck">
+    </div>
     </section>
-  </main>  
-  <section>Saved Brews
+
+  <section>
     <p id = "beer">list brews here</p>
   </section>
+</main>  
     <footer>
         <p>copyright and other info</p>
         <ul>
@@ -55,8 +56,8 @@
             <li><a href="#">About</a></li>
             </ul>
     </footer>
-    <div id='map' style='width: 400px; height: 300px;'></div>
-    <script>
+   <div id='map' style='width: 400px; height: 300px;'></div>
+<script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibWFwb25vIiwiYSI6ImNrcmkzeWg5MTRwOXoydnBkcWQyYXAweWMifQ.4vX11iAWvCYoQntike98uw';
     var map = new mapboxgl.Map({
     container: 'map',
