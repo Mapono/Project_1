@@ -31,6 +31,16 @@ padding: 15px;
 flex-basis: 10rem;
 }
 
+.brewery-card {
+  color: rgb(0, 27, 68);
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  padding: 15px;
+  width: 100%;
+  margin: 5% 0;
+}
+
 .topbar-responsive {
   background: #2c3840;
   padding: 1rem 1.5rem;
