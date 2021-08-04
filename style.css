@@ -201,10 +201,9 @@ color: orangered;
   }
 }
 .marker {
-  background-image: url('https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png');
+  background-image: url('assets/clipart659802.png');
   background-size: cover;
   width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  height: 60px;
   cursor: pointer;
 }
