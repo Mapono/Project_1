@@ -41,6 +41,17 @@ flex-basis: 10rem;
   margin: 5% 0;
 }
 
+.breweries-container{
+  height:120px;
+  overflow:scroll;
+  overflow-x:scroll;
+  width: 100%;
+  padding: 15px;
+  margin: 5% 0;
+  background: purple;
+  color: white;
+}
+
 .topbar-responsive {
   background: #2c3840;
   padding: 1rem 1.5rem;
@@ -72,6 +83,9 @@ ul.menu.simple.vertical.medium-horizontal {
 .topbar-responsive .menu a:hover {
   color: #c6d1d8;
 }
+
+
+
 
 @media screen and (max-width: 39.9375em) {
   .topbar-responsive .menu a {
@@ -106,16 +120,14 @@ ul.menu.simple.vertical.medium-horizontal {
   margin: 10px;
 }
 
-.breweries-container {
-background: purple;
-color: white;
-padding: .5em 1em;
-border: solid black 5px;
-}
+
 
 .brewery-card {
 background: lime;
 color: orangered;
+width: 85%;
+
+
 }
 
 @media screen and (max-width: 39.9375em) {

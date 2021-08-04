@@ -1,73 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Document</title>
-</head>
-<body>
-        <nav class="top-bar topbar-responsive">
-            <div class="top-bar-title">
-              <a class="topbar-responsive-logo"><strong>🍺 Warm Beer and Cold Women 🍺</strong>
-            </div>
-            <div id="topbar-responsive" class="topbar-responsive-links">
-              <div class="top-bar-right">
-                <ul class="menu simple vertical medium-horizontal">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="About.html">About</a></li>
-                  <li><a href="Bookmarks.html">Bookmarks</a></li>
-                  <li><a href="Recipes.html">Recipes</a></li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    <main>      
-    <aside>
-            <h2>Find a Brewery</h2>
-            <form class="pure-form">
-                <input type="text" class="pure-input-rounded" id="city-name">
-                <button id="fetch-button" type="button" class="pure-button">Search</button>
-            </form>
-            <div id="container">
 
-            </div>
-        </aside>
-    <section>
-      <div class="breweries-container">
-      <h2>Select a Brewry</h2>
-      <div class="brewery-deck">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+    integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <nav class="top-bar topbar-responsive">
+    <div class="top-bar-title">
+      <a class="topbar-responsive-logo"><strong>🍺 Warm Beer and Cold Women 🍺</strong>
     </div>
+    <div id="topbar-responsive" class="topbar-responsive-links">
+      <div class="top-bar-right">
+        <ul class="menu simple vertical medium-horizontal">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Bookmarks.html">Bookmarks</a></li>
+          <li><a href="Recipes.html">Recipes</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <aside>
+      <h2>Find a Brewery</h2>
+      <form class="pure-form">
+        <input type="text" class="pure-input-rounded" id="city-name">
+        <button id="fetch-button" type="button" class="pure-button">Search</button>
+      </form>
+      <div id="container">
+
+      </div>
+    </aside>
+    <section class = "brew-cont">
+      <div class="breweries-container">
+        <h2>Select a Brewry</h2>
+        <div class="brewery-deck">
+        </div>
+      </div>
     </section>
 
-  <section>
-    <h2>Select a Brewry</h2>
-    <p id = "beer">list brews here</p>
-    <div class="saved-brewery"></div>
-  </section>
-</main>  
-    <footer>
-        <p>copyright and other info</p>
-        <ul>
-            <li><a href="#">Saved Places</a></li>
-            <li><a href="#">Make it Yourself</a></li>
-            <li><a href="#">About</a></li>
-            </ul>
-    </footer>
-    <div id='map' style='width: 800px; height: 600px;'></div>
-    <script>
-      mapboxgl.accessToken = 'pk.eyJ1IjoibWFwb25vIiwiYSI6ImNrcmkzeWg5MTRwOXoydnBkcWQyYXAweWMifQ.4vX11iAWvCYoQntike98uw';
+    <section>
+      <h2>Select a Brewry</h2>
+      <p id="beer">list brews here</p>
+      <div class="saved-brewery"></div>
+    </section>
+  </main>
+  <footer>
+    <p>copyright and other info</p>
+    <ul>
+      <li><a href="#">Saved Places</a></li>
+      <li><a href="#">Make it Yourself</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </footer>
+  <div id='map' style='width: 800px; height: 600px;'></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWFwb25vIiwiYSI6ImNrcmkzeWg5MTRwOXoydnBkcWQyYXAweWMifQ.4vX11iAWvCYoQntike98uw';
 
-var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapono/ckrwwf96t03hc18oajnsf79gl',
-  center: [-96, 37.8],
-  zoom: 5
-});
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapono/ckrwwf96t03hc18oajnsf79gl',
+      center: [-96, 37.8],
+      zoom: 5
+    });
 
 // code from the next step will go here!
 
@@ -108,8 +112,9 @@ var map = new mapboxgl.Map({
 //   .setLngLat(marker.geometry.coordinates)
 //   .addTo(map);
 //});
-    </script> 
-    <script src="https://use.fontawesome.com/b3b887fd45.js"></script>
-   <script src ="script.js"></script>
+  </script>
+  <script src="https://use.fontawesome.com/b3b887fd45.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
