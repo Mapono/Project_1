@@ -73,22 +73,57 @@ width:300px;
   background: rgb(146, 138, 26);
   color: white;
 }
-.blank-block{
-  display: inline-flex;
-  height: 200px;
-  width:200px;
-}
-#map {
+
+/* #map {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
   border: 5px solid #001b44;
 
-}
+} */
 .saved-brews{
   display: flex;
   flex-wrap: wrap;
   overflow-x:scroll;
+}
+
+.add-button{
+  padding: 0.5rem;
+  font-size:1rem;
+  color:black;
+  background: white;
+  cursor:pointer;
+  transition: all 0.3s ease;
+  border-radius: 0.7em;
+}
+
+
+.add-button:hover{
+  background:#98e3a8;
+  color:white;
+}
+
+
+
+.add-button:focus{
+background-color: green;
+color: #c6d1d8;
+}
+
+.delete-button{
+  padding: 0.5rem;
+  font-size:1rem;
+  color:black;
+  background: white;
+  cursor:pointer;
+  transition: all 0.3s ease;
+  border-radius: 0.7em;
+}
+
+
+.delete-button:hover{
+  background:#e6564c;
+  color:white;
 }
 
 
@@ -268,6 +303,8 @@ width: 85%;
   text-align: center;
 }
 
+
 .mapboxgl-canvas {
   display: flex;
 }
+
