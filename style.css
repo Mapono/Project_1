@@ -207,3 +207,10 @@ color: orangered;
   height: 60px;
   cursor: pointer;
 }
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+}
