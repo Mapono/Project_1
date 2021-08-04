@@ -111,15 +111,15 @@ function loadLocalStorage () {
   var beers = document.getElementById("beer");
 
   // var brewNames = [];
-  beers.innerHTML = ""
+  beers.innerHTML = "";
   for (var i = 0; i<saved.length; i++){
     // brewNames.push(saved[i].name)
-    var savedPlace = document.createElement("p")
-    var deleteButton = document.createElement("button")
-    deleteButton.innerHTML = '<i class="fa fa-plus-square" aria-hidden="true"></i>';
+    var savedPlace = document.createElement("p");
+    var deleteButton = document.createElement("button");
+    deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
     deleteButton.classList.add("delete-button");
     deleteButton.addEventListener("click", function(event){
-      deleteBrewery(event.target.parentElement.parentElement.textContent)
+      deleteBrewery(event.target.parentElement.textContent)
     })
     savedPlace.textContent = saved[i].name + " ";
     savedPlace.appendChild(deleteButton)

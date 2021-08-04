@@ -1,3 +1,12 @@
+*{
+  box-sizing:border-box;
+};
+
+header {
+  width:100%;
+  display: flex;
+  background-color: yellow;
+}
 body{
   font-size: 30px;
   font-family: "Roboto", sans-serif;
@@ -6,18 +15,24 @@ body{
 }
 
 main {
-display: inline-flex;
+display: flex;
+flex-direction: row;
+flex: wrap;
 
 }
 
 section {
 font-size: 15px;
 display: flex;
-justify-content: flex-start;
+flex-wrap: wrap;
+justify-content: center;
 margin: 16px;
 border: 5px solid #001b44;
 padding: 15px;
 flex-basis: 30rem;
+height: 400px;
+width: 500px;
+
 }
 
 aside {
@@ -29,6 +44,8 @@ margin: 16px;
 border: 5px solid #001b44;
 padding: 15px;
 flex-basis: 10rem;
+height: 200px;
+width:300px;
 }
 
 .brewery-card {
@@ -40,10 +57,10 @@ flex-basis: 10rem;
   width: 100%;
   margin: 5% 0;
 }
-/* add scroll to researched deck  x,y*/
+/* add scroll to searched deck  x,y*/
 .breweries-container{
-  height:120px;
-  overflow:scroll;
+  height:340px;
+  overflow-y:scroll;
   overflow-x:scroll;
   width: 100%;
   padding: 15px;
@@ -51,10 +68,28 @@ flex-basis: 10rem;
   background: purple;
   color: white;
 }
+.blank-block{
+  display: inline-flex;
+  height: 200px;
+  width:200px;
+}
+#map {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 5px solid #001b44;
+
+}
+.saved-brews{
+  overflow-x:scroll;
+}
+
+
 
 .topbar-responsive {
   background: #2c3840;
   padding: 1rem 1.5rem;
+  width: 100%;
 }
 
 ul.menu.simple.vertical.medium-horizontal {
@@ -87,7 +122,7 @@ ul.menu.simple.vertical.medium-horizontal {
 
 
 
-@media screen and (max-width: 39.9375em) {
+ @media screen and (max-width: 6000px) {
   .topbar-responsive .menu a {
     padding: 0.875rem 0;
   }
@@ -126,9 +161,7 @@ ul.menu.simple.vertical.medium-horizontal {
 background: lime;
 color: orangered;
 width: 85%;
-
-
-}
+;}
 
 @media screen and (max-width: 39.9375em) {
   .topbar-responsive .menu .topbar-responsive-button {
@@ -211,7 +244,9 @@ width: 85%;
     -webkit-animation: fadeIn 1s ease-in;
             animation: fadeIn 1s ease-in;
   }
-}
+} 
+
+
 .marker {
   background-image: url('assets/clipart659802.png');
   background-size: cover;
