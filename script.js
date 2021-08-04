@@ -116,7 +116,7 @@ function loadLocalStorage () {
     // brewNames.push(saved[i].name)
     var savedPlace = document.createElement("p");
     var deleteButton = document.createElement("button");
-    deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+    deleteButton.innerHTML = '<i class="fa fa-minus-square" aria-hidden="true"></i>';
     deleteButton.classList.add("delete-button");
     deleteButton.addEventListener("click", function(event){
       deleteBrewery(event.target.parentElement.textContent)
