@@ -105,6 +105,7 @@ function loadLocalStorage () {
   var saved = JSON.parse(localStorage.getItem("savedBrews")) || [];
   var beers = document.getElementById("beer");
 
+  // var brewNames = [];
   beers.innerHTML = ""
   for (var i = 0; i<saved.length; i++){
     // brewNames.push(saved[i].name)
