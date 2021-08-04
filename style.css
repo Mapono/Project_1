@@ -106,6 +106,18 @@ ul.menu.simple.vertical.medium-horizontal {
   margin: 10px;
 }
 
+.breweries-container {
+background: purple;
+color: white;
+padding: .5em 1em;
+border: solid black 5px;
+}
+
+.brewery-card {
+background: lime;
+color: orangered;
+}
+
 @media screen and (max-width: 39.9375em) {
   .topbar-responsive .menu .topbar-responsive-button {
     width: 100%;
