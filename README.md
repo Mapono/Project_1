@@ -21,8 +21,9 @@ Be safe & enjoy!
 
 
 
-Repository:
-Live: 
+Repository: https://github.com/Mapono/Project_1
+<br>
+Live: https://github.com/Mapono/Project_1
 
 API’s:
 https://www.openbrewerydb.org/ 
