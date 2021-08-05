@@ -54,8 +54,19 @@ height: 200px;
 width:500px;
 }
 
+footer {
+    display: block;
+    text-align: center;
+    font-size: small;
+    margin-top: 1rem;
+    padding: 3px;
+    background-color: #7997ac;
+    color: black;
+    list-style-type: none;
+  }
+
 .brewery-card {
-  color: rgb(0, 27, 68);
+  color: rgb(0, 0, 0);
   border-width: 2px;
   border-style: solid;
   border-color: black;
@@ -71,8 +82,8 @@ width:500px;
   width: 100%;
   padding: 15px;
   margin: 5% 0;
-  background: rgb(146, 138, 26);
-  color: white;
+  background: rgb(184, 213, 239);
+  color: rgb(0, 0, 0);
 }
 
 /* #map {
@@ -207,8 +218,8 @@ ul.menu.simple.vertical.medium-horizontal {
 
 
 .brewery-card {
-background: rgb(0, 0, 0);
-color: rgb(161, 161, 161);
+background: rgb(255, 243, 199);
+color: rgb(0, 0, 0);
 width: 85%;
 ;}
 
@@ -315,3 +326,13 @@ width: 85%;
   display: flex;
 }
 
+.list-no-bullets {
+    display: block;
+    text-align: center;
+    font-size: small;
+    margin-top: 1rem;
+    padding: 3px;
+    background-color: #7997ac;
+    color: black;
+    list-style-type: none;
+}
