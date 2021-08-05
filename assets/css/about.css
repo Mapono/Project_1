@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Arcade;
+  src: url(assets/fonts/ARCADECLASSIC.TTF);
+}
+
 body{
     font-size: 30px;
     font-family: "Roboto", sans-serif;
