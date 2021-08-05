@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Arcade;
+  src: url(assets/fonts/ARCADECLASSIC.TTF);
+}
+
 *{
   box-sizing:border-box;
 };
@@ -65,7 +70,7 @@ width:300px;
   width: 100%;
   padding: 15px;
   margin: 5% 0;
-  background: purple;
+  background: rgb(146, 138, 26);
   color: white;
 }
 
@@ -77,6 +82,8 @@ width:300px;
 
 } */
 .saved-brews{
+  display: flex;
+  flex-wrap: wrap;
   overflow-x:scroll;
 }
 
@@ -193,19 +200,19 @@ ul.menu.simple.vertical.medium-horizontal {
 
 
 .brewery-card {
-background: lime;
-color: orangered;
+background: rgb(0, 0, 0);
+color: rgb(161, 161, 161);
 width: 85%;
 ;}
 
-@media screen and (max-width: 39.9375em) {
+@media screen and (max-width: 900px) {
   .topbar-responsive .menu .topbar-responsive-button {
     width: 100%;
     margin: 0.875rem 0;
   }
 }
 
-@media screen and (max-width: 39.9375em) {
+@media screen and (max-width: 680px) {
   .topbar-responsive {
     padding: 0.75rem;
   }
@@ -281,7 +288,6 @@ width: 85%;
   }
 } 
 
-
 .marker {
   background-image: url('assets/clipart659802.png');
   background-size: cover;
@@ -295,5 +301,10 @@ width: 85%;
 
 .mapboxgl-popup-content {
   text-align: center;
+}
+
+
+.mapboxgl-canvas {
+  display: flex;
 }
 
